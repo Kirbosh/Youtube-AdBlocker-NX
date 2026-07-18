@@ -1,0 +1,51 @@
+/* Return YouTube Dislike button states
+   Initial state: no class yet, native text hidden until the API result is known.
+*/
+.ytaf-ryd-active [idomkey="dislike-button"] yt-formatted-string {
+    visibility: hidden !important;
+}
+
+/* API loaded but no count: show YouTube's native label again. */
+.ytaf-ryd-active [idomkey="dislike-button"].ytaf-ryd-show-native yt-formatted-string {
+    visibility: visible !important;
+}
+
+/* Count available: collapse native label text and show the injected count span. */
+.ytaf-ryd-active [idomkey="dislike-button"].ytaf-ryd-show-count yt-formatted-string {
+    visibility: visible !important;
+    font-size: 0 !important;
+    line-height: 0 !important;
+    white-space: nowrap !important;
+}
+
+.ytaf-ryd-active [idomkey="dislike-button"].ytaf-ryd-show-count yt-formatted-string>.ytaf-ryd-count-span {
+    visibility: visible !important;
+    font-size: 24px !important;
+    line-height: 28px !important;
+    white-space: nowrap !important;
+    pointer-events: none !important;
+}
+
+/* Dislike factoid in the opened video description. */
+.ytaf-ryd-active ytLr-structured-description-content-renderer .ytLrVideoDescriptionHeaderRendererFactoidContainer.ytaf-ryd-ready,
+.ytaf-ryd-active ytLr-structured-description-content-renderer .rznqCe.ytaf-ryd-ready,
+.ytaf-ryd-active ytlr-structured-description-content-renderer .ytLrVideoDescriptionHeaderRendererFactoidContainer.ytaf-ryd-ready,
+.ytaf-ryd-active ytlr-structured-description-content-renderer .rznqCe.ytaf-ryd-ready,
+.ytaf-ryd-active ytlr-video-description-header-renderer .rznqCe.ytaf-ryd-ready {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 1rem !important;
+    height: auto !important;
+    overflow: visible !important;
+}
+
+.ytaf-ryd-active #ytaf-ryd-description-dislikes {
+    flex: 0 0 auto !important;
+}
+
+.ytaf-ryd-active ytlr-video-description-header-renderer .rznqCe.ytaf-ryd-ready .nOJlw {
+    width: 4.833333rem !important;
+    min-width: 4.833333rem !important;
+    max-width: 4.833333rem !important;
+}
